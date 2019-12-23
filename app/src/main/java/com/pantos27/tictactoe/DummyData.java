@@ -10,7 +10,7 @@ public class DummyData {
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder(this.getClass().getSimpleName()).append(" ");
 
         for (String arg : args) {
             builder.append(arg).append(" ");
