@@ -1,6 +1,7 @@
 package com.pantos27.tictactoe;
 
 import android.content.DialogInterface;
+import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity{
 
@@ -140,5 +142,18 @@ public class MainActivity extends AppCompatActivity{
             if (button.getText().length()==0) return false;
         }
         return true;
+    }
+
+    private boolean isHappy(){
+        Random random = new Random(System.currentTimeMillis());
+
+        return random.nextBoolean();
+    }
+
+    protected void beHappy(){
+        while (!isHappy()) {
+            //sleep until happy
+            SystemClock.sleep(100);
+        }
     }
 }
